@@ -1,5 +1,7 @@
 ### Next.js v8.x with pkg
 
+next.js v8 with pkg, dockerfile, eslint, husky and prettier as a React SSR project boilerplate for myself.
+
 `yarn`
 
 `yarn run dev`
