@@ -1,14 +1,25 @@
 {
   "name": "create-next-example-app",
+  "bin": "server.js",
+  "pkg": {
+    "assets": [
+      ".next/**/*",
+      "static/**/*"
+    ],
+    "scripts": [
+      ".next/**/*.js"
+    ]
+  },
   "scripts": {
-    "dev": "next",
+    "dev": "node server.js",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
+    "pkg": "pkg --targets node8-macos-x64 server.js --out-path pkg && NODE_ENV=production ./pkg/server",
     "eslint": "eslint ./",
     "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "format": "prettier --trailing-comma all --single-quote --write '*.{js,json,md}' '{components,pages}/**/*.{js,json,md}'",
     "precommit": "lint-staged",
-    "clean": "rm -rf ./node_modules"
+    "clean": "rm -rf node_modules"
   },
   "lint-staged": {
     "**/*.{js,json}": [
@@ -35,6 +46,7 @@
     "eslint-plugin-react": "^7.1.0",
     "husky": "0.14.3",
     "lint-staged": "7.1.0",
+    "pkg": "^4.3.7",
     "prettier": "^1.8.2"
   }
 }
