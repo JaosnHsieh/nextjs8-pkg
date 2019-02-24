@@ -1,0 +1,40 @@
+{
+  "name": "create-next-example-app",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "eslint": "eslint ./",
+    "eslint-check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
+    "format": "prettier --trailing-comma all --single-quote --write '*.{js,json,md}' '{components,pages}/**/*.{js,json,md}'",
+    "precommit": "lint-staged",
+    "clean": "rm -rf ./node_modules"
+  },
+  "lint-staged": {
+    "**/*.{js,json}": [
+      "eslint",
+      "prettier --trailing-comma all --single-quote --write",
+      "git add"
+    ]
+  },
+  "dependencies": {
+    "next": "^8.0.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.0.0",
+    "eslint": "^4.0.0",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jest": "^21.0.0",
+    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-jsx-a11y": "^6.0.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "eslint-plugin-react": "^7.1.0",
+    "husky": "0.14.3",
+    "lint-staged": "7.1.0",
+    "prettier": "^1.8.2"
+  }
+}
