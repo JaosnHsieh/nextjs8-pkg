@@ -1,27 +1,29 @@
-### reproduce steps
+### Next.js v8.x with pkg
 
 `yarn`
 
-check if dev mode working
+`yarn run dev`
 
-`yarn dev` stop by ctrl+c
+`yarn run build`
 
-`yarn build`
+`yarn run start`
 
-check if prod mode working
+`yarn run pkg:build-alpine`
 
-`yarn start` stop by ctrl+c
+`yarn run pkg:build-linux`
 
-build binary by pkg and run it
+`yarn run pkg:build-macos`
 
-`yarn run pkg`
+binary output to `pkg/create-next-example-app`
 
-`yarn run pkg` execute `pkg --targets node8-macos-x64 server.js --out-path pkg && NODE_ENV=production ./pkg/server` , might change `--targets` to `node8-linux-x64` or `node8-win-x64` for your OS.
+### Docker
 
-```
-pkg --targets node8-macos-x64 server.js --out-path pkg && NODE_ENV=production ./pkg/server
-> pkg@4.3.7
-/snapshot/youtube-collector-app/node_modules/next-server/dist/server/next-server.js:303
-                throw new Error(`Could not find a valid build in the '${this.distDir}' directory! Try
-building your app with 'next build' before starting the server.`);
-```
+`docker build -t nextjs8-pkg:master .`
+
+`docker run --rm -p 3000:3000 next-test:latest`
+
+### references
+
+https://github.com/evenchange4/nextjs-pkg-docker-alpine
+
+https://github.com/segmentio/create-next-app
