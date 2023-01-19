@@ -1,5 +1,6 @@
 {
   "name": "create-next-example-app",
+  "private": true,
   "bin": "server.js",
   "pkg": {
     "assets": [
